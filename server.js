@@ -9,19 +9,29 @@ const app = express()
 //*********************
 
 // :name? - the ? makes the param optional
-app.get("/greeting/:name?", (req, res) => {
+app.get("/greeting", (req, res) => {
+    res.send("Hello, stranger")
+})
+
+app.get("/greeting/:name", (req, res) => {
 
     // getting the param object
     const paramObj = req.params
-
-    // if the paramObj has a value for its 'name' key
-    if (paramObj['name']) {
-        res.send(`Wow! Hello there, ${paramObj.name}`)
-    }
-    else {
-        res.send("Hello, stranger")
-    }
+    res.send(`Wow! Hello there, ${paramObj.name}`)
 })
+
+// or do both the ROUTES above in one Route
+// app.get("/greeting/:name", (req, res) => {
+//     // getting the param object
+//     const paramObj = req.params
+//     // if the paramObj has a value for its 'name' key
+//     if (paramObj['name']) {
+//         res.send(`Wow! Hello there, ${paramObj.name}`)
+//     }
+//     else {
+//         res.send("Hello, stranger")
+//     }
+// })
 
 
 //********************* 
