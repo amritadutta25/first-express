@@ -28,6 +28,18 @@ app.get("/greeting/:name?", (req, res) => {
 })
 
 
+//********************* 
+//TIP CALCULATOR
+//*********************
+app.get("/tip/:total/:tipPercentage", (req, res) => {
+
+    const tipAmt = (req.params.total)*(req.params.tipPercentage/100)
+    res.send(`${tipAmt}`)
+})
+
+
+
+
 
 
 // app listener
