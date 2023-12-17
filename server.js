@@ -8,7 +8,6 @@ const app = express()
 //GREETINGS
 //*********************
 
-// :name? - the ? makes the param optional
 app.get("/greeting", (req, res) => {
     res.send("Hello, stranger")
 })
@@ -20,11 +19,13 @@ app.get("/greeting/:name", (req, res) => {
     res.send(`Wow! Hello there, ${paramObj.name}`)
 })
 
-// or do both the ROUTES above in one Route
-// app.get("/greeting/:name", (req, res) => {
+// Another way: combine both the ROUTES above into one Route
+
+// :name? - the ? makes the param optional
+// app.get("/greeting/:name?", (req, res) => {
 //     // getting the param object
 //     const paramObj = req.params
-//     // if the paramObj has a value for its 'name' key
+    // if the paramObj has a value for its 'name' key
 //     if (paramObj['name']) {
 //         res.send(`Wow! Hello there, ${paramObj.name}`)
 //     }
@@ -62,6 +63,25 @@ app.get("/magic/:ques", (req, res) => {
 
 })
 
+
+//********************* 
+//FIBONACCI
+//*********************
+// function to generate fibonacci sequence upto the given number
+// function fibonacci(num) {
+//     let res = [0, 1]
+
+//     for (i=1; i<=num; i++)
+//     {
+//         res = 
+//     }
+// }
+
+
+// app.get("/fibonacci/:num", (req, res) => {
+
+//     //
+// })
 
 
 
